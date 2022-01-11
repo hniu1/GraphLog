@@ -29,7 +29,7 @@ def ReadSequentialData(InputFileName, read_ratio):
     if '.csv' in InputFileName:
         df_data = pd.read_csv(InputFileName, index_col=False)
         list_seq = df_data['EventSequence'].tolist()
-        random.shuffle(list_seq)
+        # random.shuffle(list_seq)
         LoopCounter = 0
         for seq in list_seq:
             if LoopCounter < round(len(list_seq) * read_ratio):
@@ -155,17 +155,7 @@ def GenerateWholeGraph():
     Network = BuildNetwork.BuildNetwork(Rules)
     print(len(Network))
     DumpNetwork(Network, OutputNetworkFile)
-    # ###
-    # # generate network with freq as edge weight
-    # ###
-    # OutputNetworkFileFreq = path_network + 'network-freq.csv'
-    # # print(OutputRulesFile, OutputNetworkFile)
-    # Rules_Freq = BuildRulesFastParameterFreeFreq.ExtractRules(Training_data, MaxOrder, MinSupport)
-    # # DumpRules(Rules, OutputRulesFile)
-    # print(len(Rules_Freq))
-    # Network_Freq = BuildNetwork.BuildNetwork(Rules_Freq)
-    # print(len(Network_Freq))
-    # DumpNetwork(Network_Freq, OutputNetworkFileFreq)
+
 
 def FindLowNode(pre_s):
     if '.' in pre_s:
@@ -175,7 +165,7 @@ def FindLowNode(pre_s):
     return pre_s
 
 
-def SIM_N_v0(trajectory,NEdges, dict_events):
+def SIM_N_v0(trajectory,NEdges):
     Pt = 0.0
     for i in range(len(trajectory)-1):
         pre_s = '.'.join(trajectory[:i])
@@ -268,8 +258,8 @@ def SIM_N(trajectory,NEdges, dict_events, node_order):
                     s_hon = s + '|' + pre_s
                 else:
                     if s in dict_events:
-                        pt = dict_events[s]
-                        # pt = p0
+                        # pt = dict_events[s]
+                        pt = p0
                     else:
                         pt = p0
                     path_exist = True
@@ -287,7 +277,8 @@ def Cal_SIM(Test_data, NEdges, dict_events, node_order):
         t.insert(0, "Start")  # start
         t.append('End')
         if len(t) > MinimumLengthForTesting:
-            sim = SIM_N(t, NEdges, dict_events, node_order)
+            sim = SIM_N_v0(t, NEdges)
+            # sim = SIM_N(t, NEdges, dict_events, node_order)
         else:
             sim = -50
         list_sim.append(sim)
@@ -360,7 +351,7 @@ def Predict():
     std = np.std(arr_sim)
     threshold = mean - co_std * std
 
-    VisualSim(list_SIM_normal, list_SIM_abnormal, counts_normal, counts_abnormal, mean, threshold)
+    # VisualSim(list_SIM_normal, list_SIM_abnormal, counts_normal, counts_abnormal, mean, threshold)
     SaveSimlarity(list_SIM_normal, list_SIM_abnormal, counts_normal, counts_abnormal)
 
     pred_normal = [sim<threshold for sim in list_SIM_normal]
@@ -421,22 +412,23 @@ def GenerateFPFN():
 # Main function
 ###########################################
 ## Initialize algorithm parameters
-p1 = 1e-10
-p0 = 1e-10
+p1 = 1e-3
+p0 = 1e-100
 co_std = 1.0
-training_ratio = 0.01
-MaxOrder = 1
-MinSupport = 50
+training_ratio = 0.05
+MaxOrder = 99
+MinSupport = 0
+# MinSupport = 50
 LastStepsHoldOutForTesting = 0
 MinimumLengthForTraining = 1
 MinimumLengthForTesting = 5
 InputFileDeliminator = ' '
 Verbose = False
 
-InputFolder = '../../data_preprocessed/Drain_HDFS_1/'
+InputFolder = '../data_preprocessed/HDFS/'
 abnormal_file = InputFolder + 'data_anomaly.csv'
 normal_file = InputFolder + 'data_normal.csv'
-path_ADHD = '../../results/AD_log/hdfs/'
+path_ADHD = '../results/AD_log/hdfs/'
 path_results = path_ADHD + 'hdfs_' + str(training_ratio) + '/'
 path_data = path_results + 'data/'
 path_network = path_results + 'network/'
