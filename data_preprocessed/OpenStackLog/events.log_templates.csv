@@ -1,0 +1,37 @@
+EventId,EventTemplate
+0,[instance: <*>] VM Stopped (Lifecycle Event)
+1,[instance: <*>] VM Started (Lifecycle Event)
+2,[instance: <*>] VM Resumed (Lifecycle Event)
+3,[instance: <*>] VM Paused (Lifecycle Event)
+4,[instance: <*>] Unshelving
+5,[instance: <*>] Unrescuing
+6,[instance: <*>] Unpausing
+7,[instance: <*>] Took <*> seconds to spawn the instance on the hypervisor.
+8,[instance: <*>] Took <*> seconds to destroy the instance on the hypervisor.
+9,[instance: <*>] Took <*> seconds to deallocate network for instance.
+10,[instance: <*>] Took <*> seconds to build instance.
+11,[instance: <*>] Terminating instance
+12,[instance: <*>] Snapshot image upload complete
+13,"[instance: <*>] Snapshot extracted, beginning image upload"
+14,[instance: <*>] Shelving
+15,[instance: <*>] Shelve offloading
+16,[instance: <*>] Resuming
+17,[instance: <*>] Rescuing
+18,[instance: <*>] Pausing
+19,[instance: <*>] Instance spawned successfully.
+20,[instance: <*>] Instance shutdown successfully after <*> seconds.
+21,[instance: <*>] Instance running successfully.
+22,[instance: <*>] Instance rebooted successfully.
+23,[instance: <*>] Instance destroyed successfully.
+24,[instance: <*>] Deletion of <*> complete
+25,[instance: <*>] Deleting instance files <*>
+26,[instance: <*>] Creating image
+27,[instance: <*>] Claim successful on node <*>
+28,[instance: <*>] Beginning cold snapshot process
+29,Deleted allocation for instance <*>
+30,HTTP exception thrown: Compute host <*> could not be found.
+31,HTTP exception thrown: Cannot <*> instance <*> while it is in vm_state <*>
+32,HTTP exception thrown: Cannot <*> instance <*> while it is in task_state <*>
+33,[instance: <*>] Setting instance to ERROR state.: nova.exception_Remote.NoValidHost_Remote: No valid host was found. There are not enough hosts available.
+34,[instance: <*>] Neutron error: No more fixed IPs in network: <*>: neutronclient.common.exceptions.IpAddressGenerationFailureClient: No more IP addresses available on network <*>.
+35,Instance failed network setup after 1 attempt(s): nova.exception.NoMoreFixedIps: No fixed IP addresses available for network: <*>

@@ -1,0 +1,30 @@
+EventID,EventId,EventTemplate,Occurrences
+0,9a2c201e,Receiving block <*>src: <*>dest: <*>,1723232
+1,a02eac6e,BLOCK* NameSystem.addStoredBlock: blockMap updated: <*>is added to <*>size <*>,1719741
+2,b3ffed8d,Received block <*>of size <*> from <*>,1706514
+3,28a0ef71,Deleting block <*>file <*>,1402047
+4,23994c97,BLOCK* NameSystem.delete: <*>is added to invalidSet of <*>,1396174
+5,d58a26f6,PacketResponder <*> for block blk_<*> terminating,1137766
+6,3d91fa85,BLOCK* NameSystem.allocateBlock: <*> <*>,575061
+7,5f061fc2,PacketResponder <*> for block <*>,568962
+8,7463b7de,<*>Served block <*>to <*>,428726
+9,9680cec9,<*>Got exception while serving <*>to <*>,356207
+10,32777b38,Verification succeeded for <*>,120036
+11,a1f38e57,Received block <*>src: <*>dest: <*>of size <*>,7097
+12,24e07bdb,<*>Starting thread to transfer block <*>to <*>,7002
+13,58ffb837,BLOCK* ask <*>to replicate <*>to datanode(s) <*>,7002
+14,102b2400,<*>Transmitted block <*>to <*>,6937
+15,cf9b33dc,Unexpected error trying to delete block blk_<*>. BlockInfo not found in volumeMap.,5545
+16,58e49e56,writeBlock <*>received exception <*>,3416
+17,0567184d,Receiving empty packet for block <*>,1464
+18,c4b93536,BLOCK* NameSystem.addStoredBlock: addStoredBlock request received for <*>on <*>size <*> But it does not belong to any file.,1288
+19,ef4ff8c9,BLOCK* NameSystem.addStoredBlock: Redundant addStoredBlock request received for <*>on <*>size <*>,975
+20,6ceb0020,Exception in receiveBlock for block <*><*>,155
+21,6de6ab5b,PacketResponder <*><*> Exception <*>,108
+22,f5263e82,Changing block file offset of block <*>from <*> to <*> meta file offset to <*>,65
+23,f79898ae,PendingReplicationMonitor timed out block <*>,47
+24,ec3426ef,<*>Exception writing block <*>to mirror <*>,34
+25,fcd37a6d,Adding an already existing block <*>,10
+26,73658715,<*>Failed to transfer <*>to <*>got <*>,9
+27,06d16156,Reopen Block <*>,5
+28,468148d6,BLOCK* Removing block <*>from neededReplications as it does not belong to any file.,4
