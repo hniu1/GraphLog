@@ -1,18 +1,6 @@
-### Major update: parameter free and magnitudes faster than previous versions.
-### Paper and pseudocode: https://arxiv.org/abs/1712.09658
-
-### This file: line-by-line translation from Algorithm 1
-### in the paper "Representing higher-order dependencies in networks"
-### Code written by Jian Xu, Apr 2017
-
-### Technical questions? Please contact i[at]jianxu[dot]net
-### Demo of HON: please visit http://www.HigherOrderNetwork.com
-### Latest code: please visit https://github.com/xyjprc/hon
-
 ### Call ExtractRules()
 ### Input: Trajectory
 ### Output: Higher-order dependency rules
-### See details in README
 
 from collections import defaultdict, Counter
 #from concurrent import futures
