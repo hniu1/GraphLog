@@ -1,0 +1,9 @@
+,Values
+p0,1e-05
+p1,1e-05
+co_std,0.8
+training_ratio,0.05
+MaxOrder,99.0
+mean,-0.23281175036172172
+std,0.3763662624508405
+threshold,-0.5339047603223941

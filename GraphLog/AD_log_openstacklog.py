@@ -59,7 +59,7 @@ def ReadTestData(name, training_ratio=0.0):
             ln = [key for key, grp in itertools.groupby(ln)]
             hdfs[tuple(ln)] = hdfs.get(tuple(ln), 0) + 1
             length += 1
-        print('Number of sequences ({}): {}'.format(name.split('/')[-1], len(hdfs)))
+        print('Number of unique sequences ({}): {}'.format(name.split('/')[-1], len(hdfs)))
         return hdfs, length
 
 def DumpRules(Rules, OutputRulesFile):
@@ -338,7 +338,7 @@ def Predict():
     threshold = mean - co_std * std
 
     VisualSim(list_SIM_normal, list_SIM_abnormal, counts_normal, counts_abnormal, mean, threshold)
-    VisualSimShuffle(list_SIM_normal, list_SIM_abnormal, counts_normal, counts_abnormal, mean, threshold)
+    # VisualSimShuffle(list_SIM_normal, list_SIM_abnormal, counts_normal, counts_abnormal, mean, threshold)
     SaveSimlarity(list_SIM_normal, list_SIM_abnormal, counts_normal, counts_abnormal)
 
     pred_normal = [sim<threshold for sim in list_SIM_normal]
@@ -411,10 +411,10 @@ MinimumLengthForTesting = 5
 InputFileDeliminator = ' '
 Verbose = False
 
-InputFolder = '../../data_preprocessed/OpenStackLog/'
+InputFolder = '../data_preprocessed/OpenStackLog/'
 abnormal_file = InputFolder + 'sequence_abnormal.csv'
 normal_file = InputFolder + 'sequence_normal.csv'
-path_ADHD = '../../results/AD_log/openstacklog/'
+path_ADHD = '../results/AD_log/openstacklog/'
 path_results = path_ADHD + 'osl_' + str(training_ratio) + '/'
 path_data = path_results + 'data/'
 path_network = path_results + 'network/'
