@@ -411,7 +411,7 @@ MinimumLengthForTesting = 5
 InputFileDeliminator = ' '
 Verbose = False
 
-InputFolder = '../../data_preprocessed/Drain_OpenStackLog/'
+InputFolder = '../../data_preprocessed/OpenStackLog/'
 abnormal_file = InputFolder + 'sequence_abnormal.csv'
 normal_file = InputFolder + 'sequence_normal.csv'
 path_ADHD = '../../results/AD_log/openstacklog/'
