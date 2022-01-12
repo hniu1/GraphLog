@@ -4,6 +4,8 @@ An execution anoamly detection method based on variable-order network representa
 * [GraphLog](https://github.com/hniu1/GraphLog/tree/main/GraphLog)
 * [Baseline methods](https://github.com/hniu1/GraphLog/tree/main/baselines)
 
+*Note: This repo does not include log parsing，if you need to use it, please check [logparser](https://github.com/logpai/logparser)*
+
 ## Dataset
 The preprocessed datasets are provided for evaluation. We used two dataset here:
 * [OpenStackLog](https://github.com/hniu1/GraphLog/tree/main/data_preprocessed/OpenStackLog): We collected it from OpenStack that was deployed on CouldLab, which is a testbed for research and education in cloud computing. There are 174,725 logs collected. After preprocessing, it contains 6,000 sessions as normal, 500 abnormal sessions and 36 event templates. The detail of the dataset can be found in our paper.
