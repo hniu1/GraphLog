@@ -6,7 +6,6 @@ import os
 import sys
 import time
 sys.path.append('../../')
-
 import pandas as pd
 import torch
 import torch.nn as nn
@@ -24,8 +23,10 @@ class Trainer():
         self.model_name = options['model_name']
         self.save_dir = options['save_dir']
         self.data_dir = options['data_dir']
+        self.raw_data_dir = options['raw_data_dir']
         self.window_size = options['window_size']
         self.batch_size = options['batch_size']
+        self.train_ratio = options['training_ratio']
 
         self.device = options['device']
         self.lr_step = options['lr_step']
@@ -41,6 +42,7 @@ class Trainer():
         self.feature_num = options['feature_num']
 
         os.makedirs(self.save_dir, exist_ok=True)
+        self.split_train_test(self.raw_data_dir, self.data_dir)
         if self.sample == 'sliding_window':
             train_logs, train_labels = sliding_window(self.data_dir,
                                                   datatype='train',
@@ -123,6 +125,15 @@ class Trainer():
                 self.resume(options['resume_path'], load_optimizer=True)
             else:
                 print("Checkpoint not found")
+
+    def split_train_test(self, raw_data_dir, data_dir):
+        df_normal = pd.read_csv(raw_data_dir + 'sequence_normal.csv', header=None)
+        df_normal_train = df_normal[:round(df_normal.size*self.train_ratio)]
+        df_normal_test = df_normal[round(df_normal.size*self.train_ratio):]
+        df_abnormal = pd.read_csv(raw_data_dir + 'sequence_abnormal.csv', header=None)
+        df_normal_train.to_csv(data_dir + 'train_normal.csv', header=None, index=False)
+        df_normal_test.to_csv(data_dir + 'test_normal.csv', header=None, index=False)
+        df_abnormal.to_csv(data_dir + 'test_abnormal.csv', header=None, index=False)
 
     def resume(self, path, load_optimizer=True):
         print("Resuming from {}".format(path))
