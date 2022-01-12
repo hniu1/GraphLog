@@ -6,7 +6,7 @@ A graph-based execution anoamly detection method based on variable-order network
 
 ## Dataset
 The preprocessed datasets are provided for evaluation. We used two dataset here:
-* [OpenStackLog](https://github.com/hniu1/GraphLog/tree/main/data_preprocessed/OpenStackLog): We collected it from OpenStack that was deployed on CouldLab, which is a testbed for research and education in cloud computing. There are 174,725 logs collected. After preprocessing, it contains 6,000 sessions as normal, 500 abnormal sessions and 36 event templates. The detail of the dataset can be found in the paper.
+* [OpenStackLog](https://github.com/hniu1/GraphLog/tree/main/data_preprocessed/OpenStackLog): We collected it from OpenStack that was deployed on CouldLab, which is a testbed for research and education in cloud computing. There are 174,725 logs collected. After preprocessing, it contains 6,000 sessions as normal, 500 abnormal sessions and 36 event templates. The detail of the dataset can be found in our paper.
 * [HDFS](https://github.com/hniu1/GraphLog/tree/main/data_preprocessed/HDFS): The HDFS dataset was collected running Hadoop-based jobs from more than 200 Amazon’s EC2 nodes, and labeled by Hadoop domain experts. There are 11,175,629 logs in the dataset and it parsed 558,223 normal sequences and 16,838 abnormal sequences (2.9%). The detail of the dataset can be found [here](https://github.com/logpai/loghub/tree/master/HDFS).
 
 ## GraphLog
