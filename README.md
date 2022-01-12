@@ -1,5 +1,5 @@
 # GraphLog: Execution Anomaly Detection for System Logs
-A graph-based execution anoamly detection method based on variable-order network representation. The description instructs GraphLog and baseline methods and helps to reproduce the evaluation results. 3 parts were included:
+An execution anoamly detection method based on variable-order network representation. The description instructs GraphLog and baseline methods and helps to reproduce the evaluation results. 3 parts were included:
 * [Log sequence datasets](https://github.com/hniu1/GraphLog/tree/main/data_preprocessed)
 * [GraphLog](https://github.com/hniu1/GraphLog/tree/main/GraphLog)
 * [Baseline methods](https://github.com/hniu1/GraphLog/tree/main/baselines)
