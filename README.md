@@ -76,7 +76,7 @@ python LogClustering_OpenStackLog.py
 ```
 
 #### DeepLog
-In [LogClustering_OpenStackLog.py](https://github.com/hniu1/GraphLog/blob/main/baselines/LogClustering_OpenStackLog.py), first set training_ratio. Then,
+In [deeplog_OpenStackLog.py](https://github.com/hniu1/GraphLog/blob/main/baselines/deeplog/deeplog_OpenStackLog.py), first set training_ratio. Then,
 ```
 cd baselines/deeplog/
 # training
