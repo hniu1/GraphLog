@@ -4,17 +4,17 @@
 import pandas as pd
 import os
 import sys
-sys.path.append('../')
+# sys.path.append('../')
 from loglizer.models import PCA
 from loglizer import preprocessing
 from util import dataloader
 import time
 
-path_log = '../../../data_preprocessed/Drain_OpenStackLog/'
+path_log = '../data_preprocessed/OpenStackLog/'
 log_normal = path_log + 'sequence_normal.csv'
 log_abnormal = path_log + 'sequence_abnormal.csv'
 train_ratio = 0.50
-path_results = '../../../results/PCA_OpenStackLog/PCA_' + str(train_ratio) + '/'
+path_results = '../results/PCA_OpenStackLog/PCA_' + str(train_ratio) + '/'
 os.makedirs(path_results, exist_ok=True)
 
 if __name__ == '__main__':
