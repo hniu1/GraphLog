@@ -10,7 +10,7 @@ from loglizer import preprocessing
 from util import dataloader
 import time
 
-path_log = '../../../data_preprocessed/Drain_results/'
+path_log = '../../data_preprocessed/Drain_results/'
 log_normal = path_log + 'data_normal.csv'
 log_abnormal = path_log + 'data_anomaly.csv'
 train_ratio = 0.1
